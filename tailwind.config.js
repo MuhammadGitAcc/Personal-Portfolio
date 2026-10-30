@@ -5,18 +5,22 @@ export default {
     extend: {
       colors: {
         primary: "#0ea5e9",
-        secondary: "#0f172a",
-        light: "#f8fafc",
-        dark: "#0f172a",
       },
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
-      },
-      screens: {
-        xs: "480px",
-      },
-      animation: {
-        "bounce-slow": "bounce 3s infinite",
+        sans: [
+          "Inter",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          '"Segoe UI"',
+          "Roboto",
+          "Oxygen",
+          "Ubuntu",
+          "Cantarell",
+          '"Fira Sans"',
+          '"Droid Sans"',
+          '"Helvetica Neue"',
+          "sans-serif",
+        ],
       },
     },
   },
