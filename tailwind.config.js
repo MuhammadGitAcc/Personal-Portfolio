@@ -1,8 +1,6 @@
-module.exports = {
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-  ],
-  darkMode: 'class',
+export default {
+  content: ["./index.html", "./src/**/*.{ts,tsx}"],
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
@@ -12,15 +10,15 @@ module.exports = {
         dark: "#0f172a",
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
+        sans: ["Inter", "sans-serif"],
       },
       screens: {
-        'xs': '480px',
+        xs: "480px",
       },
       animation: {
-        'bounce-slow': 'bounce 3s infinite',
-      }
+        "bounce-slow": "bounce 3s infinite",
+      },
     },
   },
   plugins: [],
-}
+};

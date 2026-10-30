@@ -1,4 +1,5 @@
-import React, { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
+import type { ChangeEvent, FormEvent } from "react";
 import { motion } from "framer-motion";
 import {
   FaEnvelope,
@@ -29,7 +30,9 @@ const Contact = () => {
     emailjs.init("REDACTED_EMAILJS_PUBLIC_KEY");
   }, []);
 
-  const handleChange = (e) => {
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     const { id, value } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -37,7 +40,7 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (
@@ -61,7 +64,7 @@ const Contact = () => {
         "REDACTED_SERVICE_ID",
         "REDACTED_TEMPLATE_ID",
         formData,
-        "REDACTED_EMAILJS_PUBLIC_KEY"
+        "REDACTED_EMAILJS_PUBLIC_KEY",
       )
       .then((result) => {
         console.log("Email sent successfully:", result);
@@ -271,7 +274,7 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    rows="5"
+                    rows={5}
                     className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-primary dark:bg-gray-800 dark:text-white"
                     placeholder="Your Message"
                   ></textarea>
