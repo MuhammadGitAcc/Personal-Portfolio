@@ -8,6 +8,7 @@ export interface SocialLink {
   id: SocialLinkId;
   label: LocalizedText;
   href: string | LocalizedText;
+  display?: string;
 }
 
 export interface NavItem {
