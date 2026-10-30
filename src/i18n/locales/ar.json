@@ -1,0 +1,89 @@
+{
+  "nav": {
+    "label": "التنقل الرئيسي",
+    "about": "نبذة عني",
+    "education": "التعليم",
+    "experience": "الخبرة",
+    "projects": "المشاريع",
+    "contact": "تواصل معي",
+    "openMenu": "فتح القائمة",
+    "closeMenu": "إغلاق القائمة"
+  },
+  "common": {
+    "skipToContent": "تخطّي إلى المحتوى",
+    "logoAlt": "شعار {{name}}",
+    "switchToLight": "التبديل إلى الوضع الفاتح",
+    "switchToDark": "التبديل إلى الوضع الداكن"
+  },
+  "language": {
+    "label": "اللغة",
+    "en": "English",
+    "ar": "العربية"
+  },
+  "footer": {
+    "rights": "© {{year}} {{name}}. جميع الحقوق محفوظة."
+  },
+  "hero": {
+    "greeting": "مرحباً، أنا",
+    "contactMe": "تواصل معي",
+    "viewProjects": "عرض المشاريع",
+    "viewCv": "عرض السيرة الذاتية"
+  },
+  "about": {
+    "title": "نبذة عني",
+    "name": "الاسم",
+    "nationality": "الجنسية",
+    "nationalityValue": "سوري",
+    "experience": "الخبرة",
+    "experienceValue": "{{years}}+ سنوات",
+    "specialization": "التخصص"
+  },
+  "education": {
+    "title": "التعليم"
+  },
+  "experience": {
+    "title": "الخبرة المهنية"
+  },
+  "projects": {
+    "title": "المشاريع",
+    "viewProject": "عرض المشروع",
+    "categories": {
+      "all": "كل المشاريع",
+      "ecommerce": "التجارة الإلكترونية",
+      "utility": "أدوات",
+      "blog": "مدوّنة",
+      "management": "إدارة"
+    }
+  },
+  "contact": {
+    "title": "تواصل معي",
+    "getInTouch": "ابقَ على تواصل",
+    "email": "البريد الإلكتروني",
+    "phone": "الهاتف",
+    "location": "الموقع",
+    "locationValue": "سوريا",
+    "connect": "تابعني على",
+    "sendTitle": "أرسل لي رسالة",
+    "form": {
+      "name": "الاسم",
+      "email": "البريد الإلكتروني",
+      "subject": "الموضوع",
+      "message": "الرسالة",
+      "namePlaceholder": "اسمك",
+      "emailPlaceholder": "بريدك الإلكتروني",
+      "subjectPlaceholder": "الموضوع",
+      "messagePlaceholder": "رسالتك",
+      "send": "إرسال الرسالة",
+      "sending": "جارٍ الإرسال...",
+      "success": "تم إرسال رسالتك بنجاح! سأرد عليك قريباً.",
+      "error": "حدث خطأ أثناء إرسال الرسالة. يرجى المحاولة لاحقاً.",
+      "cooldown": "يرجى الانتظار قليلاً قبل إرسال رسالة أخرى.",
+      "errors": {
+        "name": "يرجى إدخال اسمك.",
+        "email": "يرجى إدخال بريد إلكتروني صالح.",
+        "subject": "يرجى إدخال الموضوع.",
+        "message": "يرجى كتابة رسالتك."
+      }
+    }
+  }
+}

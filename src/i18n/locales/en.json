@@ -1,0 +1,89 @@
+{
+  "nav": {
+    "label": "Main navigation",
+    "about": "About",
+    "education": "Education",
+    "experience": "Experience",
+    "projects": "Projects",
+    "contact": "Contact",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "common": {
+    "skipToContent": "Skip to content",
+    "logoAlt": "{{name}} logo",
+    "switchToLight": "Switch to light mode",
+    "switchToDark": "Switch to dark mode"
+  },
+  "language": {
+    "label": "Language",
+    "en": "English",
+    "ar": "العربية"
+  },
+  "footer": {
+    "rights": "© {{year}} {{name}}. All rights reserved."
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "contactMe": "Contact Me",
+    "viewProjects": "View Projects",
+    "viewCv": "View CV"
+  },
+  "about": {
+    "title": "About Me",
+    "name": "Name",
+    "nationality": "Nationality",
+    "nationalityValue": "Syrian",
+    "experience": "Experience",
+    "experienceValue": "{{years}}+ Years",
+    "specialization": "Specialization"
+  },
+  "education": {
+    "title": "Education"
+  },
+  "experience": {
+    "title": "Professional Experience"
+  },
+  "projects": {
+    "title": "Projects",
+    "viewProject": "View Project",
+    "categories": {
+      "all": "All Projects",
+      "ecommerce": "E-commerce",
+      "utility": "Utility",
+      "blog": "Blog",
+      "management": "Management"
+    }
+  },
+  "contact": {
+    "title": "Contact Me",
+    "getInTouch": "Get In Touch",
+    "email": "Email",
+    "phone": "Phone",
+    "location": "Location",
+    "locationValue": "Syria",
+    "connect": "Connect With Me",
+    "sendTitle": "Send Me a Message",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "namePlaceholder": "Your Name",
+      "emailPlaceholder": "Your Email",
+      "subjectPlaceholder": "Subject",
+      "messagePlaceholder": "Your Message",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "success": "Your message has been sent successfully! I'll get back to you soon.",
+      "error": "Error sending message. Please try again later.",
+      "cooldown": "Please wait a moment before sending another message.",
+      "errors": {
+        "name": "Please enter your name.",
+        "email": "Please enter a valid email address.",
+        "subject": "Please enter a subject.",
+        "message": "Please enter a message."
+      }
+    }
+  }
+}
