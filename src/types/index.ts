@@ -45,3 +45,11 @@ export interface Project {
   repoUrl?: string;
   featured?: boolean;
 }
+
+export interface SiteInfo {
+  name: LocalizedText;
+  title: LocalizedText;
+  description: LocalizedText;
+  url: string;
+  yearsOfExperience: number;
+}
