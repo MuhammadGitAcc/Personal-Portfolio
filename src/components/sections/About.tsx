@@ -51,14 +51,12 @@ const About = () => {
                 Software Engineer | Full-Stack Web Developer
               </h3>
               <p className="text-gray-600 dark:text-gray-300 mb-4">
-                Mohammad Mohammad – I build fast, scalable web applications
-                using modern stacks like React, Next.js, and Node.js. With 2+
-                years of experience developing e-commerce platforms, task
-                management systems, and custom solutions, I focus on clean code,
-                system architecture, and seamless integration across the full
-                stack. Proficient in TypeScript, REST APIs, and cloud platforms,
-                I am also pursuing a Master’s in Web Science to deepen expertise
-                in performance and emerging technologies.
+                Mohammad Mohammad – I build fast, scalable web applications using modern stacks like
+                React, Next.js, and Node.js. With 2+ years of experience developing e-commerce
+                platforms, task management systems, and custom solutions, I focus on clean code,
+                system architecture, and seamless integration across the full stack. Proficient in
+                TypeScript, REST APIs, and cloud platforms, I am also pursuing a Master’s in Web
+                Science to deepen expertise in performance and emerging technologies.
               </p>
             </div>
           </div>

@@ -33,9 +33,7 @@ const Education = () => {
           viewport={{ once: true }}
         >
           <div className="flex flex-col items-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-2 text-center">
-              Education
-            </h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-2 text-center">Education</h2>
             <div className="w-20 h-1 bg-primary rounded"></div>
           </div>
 
@@ -48,9 +46,7 @@ const Education = () => {
               <div
                 key={item.id}
                 className={`relative flex flex-col md:flex-row items-center mb-16 ${
-                  item.position === "left"
-                    ? "md:flex-row-reverse"
-                    : "md:flex-row"
+                  item.position === "left" ? "md:flex-row-reverse" : "md:flex-row"
                 }`}
               >
                 {/* Content box */}

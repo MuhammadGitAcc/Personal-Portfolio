@@ -30,9 +30,7 @@ const Contact = () => {
     emailjs.init("REDACTED_EMAILJS_PUBLIC_KEY");
   }, []);
 
-  const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { id, value } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -43,12 +41,7 @@ const Contact = () => {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (
-      !formData.name ||
-      !formData.email ||
-      !formData.subject ||
-      !formData.message
-    ) {
+    if (!formData.name || !formData.email || !formData.subject || !formData.message) {
       alert("Please fill out all fields before sending.");
       return;
     }
@@ -60,12 +53,7 @@ const Contact = () => {
 
     // Use EmailJS to send the form - using the same approach as the working code
     emailjs
-      .send(
-        "REDACTED_SERVICE_ID",
-        "REDACTED_TEMPLATE_ID",
-        formData,
-        "REDACTED_EMAILJS_PUBLIC_KEY",
-      )
+      .send("REDACTED_SERVICE_ID", "REDACTED_TEMPLATE_ID", formData, "REDACTED_EMAILJS_PUBLIC_KEY")
       .then((result) => {
         console.log("Email sent successfully:", result);
         setIsSubmitting(false);
@@ -192,8 +180,7 @@ const Contact = () => {
 
               {submitSuccess && (
                 <div className="bg-green-100 dark:bg-green-800 text-green-700 dark:text-green-100 p-4 rounded-md mb-6">
-                  Your message has been sent successfully! I'll get back to you
-                  soon.
+                  Your message has been sent successfully! I'll get back to you soon.
                 </div>
               )}
 
@@ -205,10 +192,7 @@ const Contact = () => {
 
               <form ref={formRef} onSubmit={handleSubmit}>
                 <div className="mb-4">
-                  <label
-                    htmlFor="name"
-                    className="block text-gray-700 dark:text-gray-300 mb-2"
-                  >
+                  <label htmlFor="name" className="block text-gray-700 dark:text-gray-300 mb-2">
                     Name
                   </label>
                   <input
@@ -224,10 +208,7 @@ const Contact = () => {
                 </div>
 
                 <div className="mb-4">
-                  <label
-                    htmlFor="email"
-                    className="block text-gray-700 dark:text-gray-300 mb-2"
-                  >
+                  <label htmlFor="email" className="block text-gray-700 dark:text-gray-300 mb-2">
                     Email
                   </label>
                   <input
@@ -243,10 +224,7 @@ const Contact = () => {
                 </div>
 
                 <div className="mb-4">
-                  <label
-                    htmlFor="subject"
-                    className="block text-gray-700 dark:text-gray-300 mb-2"
-                  >
+                  <label htmlFor="subject" className="block text-gray-700 dark:text-gray-300 mb-2">
                     Subject
                   </label>
                   <input
@@ -262,10 +240,7 @@ const Contact = () => {
                 </div>
 
                 <div className="mb-6">
-                  <label
-                    htmlFor="message"
-                    className="block text-gray-700 dark:text-gray-300 mb-2"
-                  >
+                  <label htmlFor="message" className="block text-gray-700 dark:text-gray-300 mb-2">
                     Message
                   </label>
                   <textarea

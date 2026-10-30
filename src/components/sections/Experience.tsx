@@ -32,14 +32,7 @@ const Experience = () => {
       location: "Remote",
       description:
         "Currently, I develop dynamic and responsive web applications using React.js, collaborating with cross-functional teams to deliver high-performance frontend solutions. My role involves optimizing user interfaces, integrating RESTful APIs, and ensuring seamless user experiences while adhering to modern development practices like component-based architecture, state management, and reusable code.",
-      skills: [
-        "React.js",
-        "TypeScript",
-        "Tailwind",
-        "ECMAScript",
-        "Git",
-        "Rest APIs",
-      ],
+      skills: ["React.js", "TypeScript", "Tailwind", "ECMAScript", "Git", "Rest APIs"],
     },
     {
       id: 3,
@@ -49,13 +42,7 @@ const Experience = () => {
       location: "Remote",
       description:
         "At Future Learning, I build dynamic and responsive web applications using React.js, contributing to an innovative platform that transforms digital education. My role involves developing interactive user interfaces, optimizing performance, and collaborating with cross-functional teams to deliver seamless learning experiences. Leveraging modern frontend technologies, I help create scalable solutions that enhance user engagement and accessibility.",
-      skills: [
-        "React.js",
-        "TypeScript",
-        "Bootstrap (Framework)",
-        "Tailwind",
-        "Rest APIs",
-      ],
+      skills: ["React.js", "TypeScript", "Bootstrap (Framework)", "Tailwind", "Rest APIs"],
     },
     {
       id: 4,
@@ -83,11 +70,7 @@ const Experience = () => {
       location: "Remote",
       description:
         "At Syrian Tech Solutions, I worked as a UX Designer, where I focused on creating intuitive and user-friendly digital experiences. I collaborated with developers and product teams to design wireframes, prototypes, and high-fidelity interfaces using Figma, ensuring seamless interactions and visually appealing layouts. My role involved conducting user research, refining designs based on feedback, and aligning interfaces with both business goals and user needs—helping to enhance usability and engagement across web and mobile platforms.",
-      skills: [
-        "UI/UX design",
-        "Figma (Software)",
-        "Cascading Style Sheets (CSS)",
-      ],
+      skills: ["UI/UX design", "Figma (Software)", "Cascading Style Sheets (CSS)"],
     },
     {
       id: 6,
@@ -129,9 +112,7 @@ const Experience = () => {
               >
                 <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 relative border-l-4 border-primary text-center md:text-left">
                   <h3 className="text-xl font-bold mb-1">{item.role}</h3>
-                  <h4 className="text-lg font-semibold text-primary mb-2">
-                    {item.company}
-                  </h4>
+                  <h4 className="text-lg font-semibold text-primary mb-2">{item.company}</h4>
 
                   <div className="flex flex-col md:flex-row md:flex-wrap gap-4 mb-3 text-sm text-gray-600 dark:text-gray-300 justify-center md:justify-start">
                     <div className="flex items-center justify-center md:justify-start">

@@ -93,9 +93,7 @@ const Projects = () => {
   ];
 
   const filteredProjects =
-    filter === "all"
-      ? projectsData
-      : projectsData.filter((project) => project.category === filter);
+    filter === "all" ? projectsData : projectsData.filter((project) => project.category === filter);
 
   const categories = [
     { id: "all", name: "All Projects" },
@@ -170,20 +168,15 @@ const Projects = () => {
                     </div>
                   </div>
                   <div className="p-6">
-                    <h3 className="text-xl font-bold mb-2 truncate">
-                      {project.title}
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-300 mb-4">
-                      {project.description}
-                    </p>
+                    <h3 className="text-xl font-bold mb-2 truncate">{project.title}</h3>
+                    <p className="text-gray-600 dark:text-gray-300 mb-4">{project.description}</p>
                     <a
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-primary hover:text-primary/80 font-medium flex items-center"
                     >
-                      View Project{" "}
-                      <FaExternalLinkAlt className="ml-2" size={14} />
+                      View Project <FaExternalLinkAlt className="ml-2" size={14} />
                     </a>
                   </div>
                 </div>

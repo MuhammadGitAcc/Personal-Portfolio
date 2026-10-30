@@ -34,22 +34,13 @@ const Header = ({ darkMode, toggleDarkMode }: HeaderProps) => {
             <a href="#about" className="hover:text-primary transition-colors">
               About
             </a>
-            <a
-              href="#education"
-              className="hover:text-primary transition-colors"
-            >
+            <a href="#education" className="hover:text-primary transition-colors">
               Education
             </a>
-            <a
-              href="#experience"
-              className="hover:text-primary transition-colors"
-            >
+            <a href="#experience" className="hover:text-primary transition-colors">
               Experience
             </a>
-            <a
-              href="#projects"
-              className="hover:text-primary transition-colors"
-            >
+            <a href="#projects" className="hover:text-primary transition-colors">
               Projects
             </a>
             <a href="#contact" className="hover:text-primary transition-colors">
@@ -60,9 +51,7 @@ const Header = ({ darkMode, toggleDarkMode }: HeaderProps) => {
             <button
               onClick={toggleDarkMode}
               className="p-2 rounded-full bg-gray-200 dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-primary"
-              aria-label={
-                darkMode ? "Switch to light mode" : "Switch to dark mode"
-              }
+              aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
             >
               {darkMode ? (
                 <FaSun className="text-yellow-400" />
@@ -78,9 +67,7 @@ const Header = ({ darkMode, toggleDarkMode }: HeaderProps) => {
             <button
               onClick={toggleDarkMode}
               className="p-2 rounded-full bg-gray-200 dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-primary"
-              aria-label={
-                darkMode ? "Switch to light mode" : "Switch to dark mode"
-              }
+              aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
             >
               {darkMode ? (
                 <FaSun className="text-yellow-400" />
