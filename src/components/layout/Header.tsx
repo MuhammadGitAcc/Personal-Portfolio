@@ -1,9 +1,14 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaBars, FaTimes, FaMoon, FaSun } from "react-icons/fa";
 import Logo from "../../assets/logo.png";
 
-const Header = ({ darkMode, toggleDarkMode }) => {
+type HeaderProps = {
+  darkMode: boolean;
+  toggleDarkMode: () => void;
+};
+
+const Header = ({ darkMode, toggleDarkMode }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {

@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import { FaGraduationCap, FaCalendarAlt, FaUniversity } from "react-icons/fa";
 
@@ -45,7 +44,7 @@ const Education = () => {
             {/* Vertical line for desktop, left-aligned on mobile */}
             <div className="absolute left-6 md:left-1/2 md:-translate-x-1/2 w-1 bg-gray-200 dark:bg-gray-700 h-full z-0"></div>
 
-            {educationData.map((item, index) => (
+            {educationData.map((item) => (
               <div
                 key={item.id}
                 className={`relative flex flex-col md:flex-row items-center mb-16 ${
