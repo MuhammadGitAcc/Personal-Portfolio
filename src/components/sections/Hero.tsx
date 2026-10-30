@@ -20,11 +20,10 @@ const Hero = () => {
           Software Engineer | Full-Stack Web Developer
         </h2>
         <p className="text-lg md:text-xl max-w-2xl mx-auto mb-8 text-gray-600 dark:text-gray-300">
-          With over 3 years of experience in web development and design, I build
-          modern, responsive applications that prioritize user experience and
-          are powered by clean, efficient code. I work across the full stack
-          using React, TypeScript, Tailwind CSS on the front-end and Node.js,
-          Python, PostgreSQL on the back-end.
+          With over 3 years of experience in web development and design, I build modern, responsive
+          applications that prioritize user experience and are powered by clean, efficient code. I
+          work across the full stack using React, TypeScript, Tailwind CSS on the front-end and
+          Node.js, Python, PostgreSQL on the back-end.
         </p>
 
         <div className="flex justify-center space-x-4 mb-8">
