@@ -7,6 +7,7 @@ import { site } from "../../data/site";
 import { useActiveSection } from "../../hooks/useActiveSection";
 import { useLanguage } from "../../hooks/useLanguage";
 import Container from "../ui/Container";
+import LanguageToggle from "../ui/LanguageToggle";
 import ThemeToggle from "../ui/ThemeToggle";
 
 type HeaderProps = {
@@ -62,10 +63,12 @@ const Header = ({ darkMode, toggleDarkMode }: HeaderProps) => {
 
           <nav aria-label={t("nav.label")} className="hidden md:flex items-center space-x-8">
             {renderLinks()}
+            <LanguageToggle />
             <ThemeToggle isDark={darkMode} onToggle={toggleDarkMode} />
           </nav>
 
           <div className="md:hidden flex items-center space-x-4">
+            <LanguageToggle />
             <ThemeToggle isDark={darkMode} onToggle={toggleDarkMode} />
             <button
               type="button"
