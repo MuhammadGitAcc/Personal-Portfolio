@@ -13,7 +13,11 @@ const Experience = () => {
   const language = useLanguage();
 
   return (
-    <section id="experience" className="py-16 bg-gray-100 dark:bg-gray-800">
+    <section
+      id="experience"
+      aria-labelledby="experience-heading"
+      className="py-16 bg-gray-100 dark:bg-gray-800"
+    >
       <Container>
         <motion.div
           initial={{ opacity: 0 }}
@@ -21,7 +25,7 @@ const Experience = () => {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <SectionHeading title={t("experience.title")} />
+          <SectionHeading title={t("experience.title")} id="experience-heading" />
 
           <div className="max-w-4xl mx-auto">
             {experience.map((item) => (

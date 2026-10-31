@@ -22,7 +22,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-16 bg-white dark:bg-gray-800">
+    <section id="about" aria-labelledby="about-heading" className="py-16 bg-white dark:bg-gray-800">
       <Container>
         <motion.div
           initial={{ opacity: 0 }}
@@ -30,7 +30,7 @@ const About = () => {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <SectionHeading title={t("about.title")} />
+          <SectionHeading title={t("about.title")} id="about-heading" />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center px-4 md:px-10">
             <div className="order-2 md:order-1 flex justify-center">

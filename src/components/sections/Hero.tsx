@@ -22,6 +22,7 @@ const Hero = () => {
   return (
     <section
       id="hero"
+      aria-labelledby="hero-heading"
       className="py-20 md:py-32 flex flex-col items-center justify-center text-center"
     >
       <motion.div
@@ -31,12 +32,12 @@ const Hero = () => {
         className="w-full"
       >
         <Container>
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">
+          <h1 id="hero-heading" className="text-4xl md:text-6xl font-bold mb-4">
             {t("hero.greeting")} <span className="text-primary">{site.name[language]}</span>
           </h1>
-          <h2 className="text-2xl md:text-3xl text-gray-600 dark:text-gray-300 mb-6">
+          <p className="text-2xl md:text-3xl text-gray-600 dark:text-gray-300 mb-6">
             {site.title[language]}
-          </h2>
+          </p>
           <p className="text-lg md:text-xl max-w-2xl mx-auto mb-8 text-gray-600 dark:text-gray-300">
             {site.description[language]}
           </p>

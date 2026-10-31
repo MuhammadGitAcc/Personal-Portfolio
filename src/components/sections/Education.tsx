@@ -12,7 +12,11 @@ const Education = () => {
   const language = useLanguage();
 
   return (
-    <section id="education" className="py-16 bg-gray-50 dark:bg-gray-900">
+    <section
+      id="education"
+      aria-labelledby="education-heading"
+      className="py-16 bg-gray-50 dark:bg-gray-900"
+    >
       <Container>
         <motion.div
           initial={{ opacity: 0 }}
@@ -20,7 +24,7 @@ const Education = () => {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <SectionHeading title={t("education.title")} />
+          <SectionHeading title={t("education.title")} id="education-heading" />
 
           {/* Timeline container */}
           <div className="relative max-w-3xl mx-auto">
