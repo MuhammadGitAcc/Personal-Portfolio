@@ -61,13 +61,13 @@ const Header = ({ darkMode, toggleDarkMode }: HeaderProps) => {
             </a>
           </div>
 
-          <nav aria-label={t("nav.label")} className="hidden md:flex items-center space-x-8">
+          <nav aria-label={t("nav.label")} className="hidden md:flex items-center gap-8">
             {renderLinks()}
             <LanguageToggle />
             <ThemeToggle isDark={darkMode} onToggle={toggleDarkMode} />
           </nav>
 
-          <div className="md:hidden flex items-center space-x-4">
+          <div className="md:hidden flex items-center gap-4">
             <LanguageToggle />
             <ThemeToggle isDark={darkMode} onToggle={toggleDarkMode} />
             <button

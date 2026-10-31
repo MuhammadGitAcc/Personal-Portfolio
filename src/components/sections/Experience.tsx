@@ -33,7 +33,7 @@ const Experience = () => {
                 viewport={{ once: true }}
                 className="mb-8"
               >
-                <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 relative border-l-4 border-primary text-center md:text-left">
+                <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 relative border-s-4 border-primary text-center md:text-start">
                   <h3 className="text-xl font-bold mb-1">{item.role[language]}</h3>
                   <h4 className="text-lg font-semibold text-primary mb-2">
                     {item.company[language]}
@@ -44,7 +44,7 @@ const Experience = () => {
                     <MetaItem icon={FaMapMarkerAlt}>{item.location[language]}</MetaItem>
                   </div>
 
-                  <p className="mb-4 text-gray-600 dark:text-gray-300 text-center md:text-left">
+                  <p className="mb-4 text-gray-600 dark:text-gray-300 text-center md:text-start">
                     {item.description[language]}
                   </p>
 

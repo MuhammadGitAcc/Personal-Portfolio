@@ -19,7 +19,7 @@ const Footer = () => {
     <footer className="bg-gray-800 text-white py-8">
       <Container>
         <div className="flex flex-col items-center w-full">
-          <div className="flex space-x-4">
+          <div className="flex gap-4">
             {footerLinkIds.map((id) => {
               const link = getSocialLink(id);
               const Icon = socialIcons[id];

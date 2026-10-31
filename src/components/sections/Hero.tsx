@@ -41,7 +41,7 @@ const Hero = () => {
             {site.description[language]}
           </p>
 
-          <div className="flex justify-center space-x-4 mb-8">
+          <div className="flex justify-center gap-4 mb-8">
             <IconLink
               href={resolveHref(linkedin, language)}
               label={linkedin.label[language]}

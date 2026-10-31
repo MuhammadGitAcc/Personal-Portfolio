@@ -37,7 +37,7 @@ const About = () => {
               <dl className="flex flex-col gap-4 text-lg md:text-xl">
                 {rows.map(({ icon: Icon, label, value }) => (
                   <div key={label} className="flex items-center">
-                    <Icon className="text-primary mr-3 text-xl" aria-hidden="true" />
+                    <Icon className="text-primary me-3 text-xl" aria-hidden="true" />
                     <div>
                       <dt className="inline font-bold">{label}:</dt>{" "}
                       <dd className="inline">{value}</dd>
@@ -47,7 +47,7 @@ const About = () => {
               </dl>
             </div>
 
-            <div className="order-1 md:order-2 text-center md:text-left">
+            <div className="order-1 md:order-2 text-center md:text-start">
               <h3 className="text-2xl font-bold mb-4">{site.title[language]}</h3>
               <p className="text-gray-600 dark:text-gray-300 mb-4">{site.description[language]}</p>
             </div>

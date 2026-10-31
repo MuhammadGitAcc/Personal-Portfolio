@@ -177,7 +177,7 @@ const Projects = () => {
                       rel="noopener noreferrer"
                       className="text-primary hover:text-primary/80 font-medium flex items-center"
                     >
-                      View Project <FaExternalLinkAlt className="ml-2" size={14} />
+                      View Project <FaExternalLinkAlt className="ms-2" size={14} />
                     </a>
                   </div>
                 </div>

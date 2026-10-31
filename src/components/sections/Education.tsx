@@ -25,7 +25,7 @@ const Education = () => {
           {/* Timeline container */}
           <div className="relative max-w-3xl mx-auto">
             {/* Vertical line for desktop, left-aligned on mobile */}
-            <div className="absolute left-6 md:left-1/2 md:-translate-x-1/2 w-1 bg-gray-200 dark:bg-gray-700 h-full z-0"></div>
+            <div className="absolute start-6 md:start-1/2 md:ltr:-translate-x-1/2 md:rtl:translate-x-1/2 w-1 bg-gray-200 dark:bg-gray-700 h-full z-0"></div>
 
             {education.map((item, index) => (
               <div
@@ -36,8 +36,8 @@ const Education = () => {
               >
                 {/* Content box */}
                 <div
-                  className={`bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md w-full md:w-5/12 text-center md:text-left ${
-                    index % 2 !== 0 ? "md:ml-auto" : "md:mr-auto"
+                  className={`bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md w-full md:w-5/12 text-center md:text-start ${
+                    index % 2 !== 0 ? "md:ms-auto" : "md:me-auto"
                   }`}
                 >
                   <h3 className="text-xl font-semibold mb-4">{item.degree[language]}</h3>
@@ -50,7 +50,7 @@ const Education = () => {
                 </div>
 
                 {/* Timeline dot (adjusted only for mobile) */}
-                <div className="absolute z-10 top-[-1.5rem] left-6 md:left-1/2 md:-translate-x-1/2 md:top-1/2 md:-translate-y-1/2">
+                <div className="absolute z-10 top-[-1.5rem] start-6 md:start-1/2 md:ltr:-translate-x-1/2 md:rtl:translate-x-1/2 md:top-1/2 md:-translate-y-1/2">
                   <motion.div
                     className="w-12 h-12 rounded-full bg-primary flex items-center justify-center shadow-md border-2 border-white dark:border-gray-800"
                     initial={{ scale: 0 }}
