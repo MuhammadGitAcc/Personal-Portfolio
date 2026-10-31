@@ -175,7 +175,7 @@ const Projects = () => {
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-primary hover:text-primary/80 font-medium flex items-center"
+                      className="text-primary dark:text-primary-light font-medium flex items-center hover:underline"
                     >
                       View Project <FaExternalLinkAlt className="ms-2" size={14} />
                     </a>

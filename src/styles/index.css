@@ -36,8 +36,13 @@ html {
 
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid #0ea5e9;
+  outline: 2px solid #0369a1;
   outline-offset: 2px;
+}
+
+.dark a:focus-visible,
+.dark button:focus-visible {
+  outline-color: #38bdf8;
 }
 
 input,
@@ -49,8 +54,14 @@ textarea {
 
 input:focus,
 textarea:focus {
-  border-color: #0ea5e9;
-  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.2);
+  border-color: #0369a1;
+  box-shadow: 0 0 0 3px rgba(3, 105, 161, 0.25);
+}
+
+.dark input:focus,
+.dark textarea:focus {
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.25);
 }
 
 @media (prefers-reduced-motion: reduce) {

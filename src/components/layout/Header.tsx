@@ -40,7 +40,7 @@ const Header = ({ darkMode, toggleDarkMode }: HeaderProps) => {
           href={`#${item.sectionId}`}
           onClick={onNavigate}
           aria-current={isActive ? "true" : undefined}
-          className={`hover:text-primary transition-colors ${isActive ? "text-primary font-medium" : ""}`}
+          className={`hover:text-primary dark:hover:text-primary-light transition-colors ${isActive ? "text-primary dark:text-primary-light font-medium" : ""}`}
         >
           {t(item.labelKey)}
         </a>

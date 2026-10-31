@@ -37,7 +37,10 @@ const About = () => {
               <dl className="flex flex-col gap-4 text-lg md:text-xl">
                 {rows.map(({ icon: Icon, label, value }) => (
                   <div key={label} className="flex items-center">
-                    <Icon className="text-primary me-3 text-xl" aria-hidden="true" />
+                    <Icon
+                      className="text-primary dark:text-primary-light me-3 text-xl"
+                      aria-hidden="true"
+                    />
                     <div>
                       <dt className="inline font-bold">{label}:</dt>{" "}
                       <dd className="inline">{value}</dd>

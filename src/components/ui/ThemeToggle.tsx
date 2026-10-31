@@ -13,7 +13,7 @@ const ThemeToggle = ({ isDark, onToggle }: ThemeToggleProps) => {
     <button
       type="button"
       onClick={onToggle}
-      className="p-2 rounded-full bg-gray-200 dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-primary"
+      className="p-2 rounded-full bg-gray-200 dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-primary-light"
       aria-label={isDark ? t("common.switchToLight") : t("common.switchToDark")}
     >
       {isDark ? <FaSun className="text-yellow-400" /> : <FaMoon className="text-gray-700" />}

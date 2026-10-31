@@ -33,7 +33,8 @@ const Hero = () => {
       >
         <Container>
           <h1 id="hero-heading" className="text-4xl md:text-6xl font-bold mb-4">
-            {t("hero.greeting")} <span className="text-primary">{site.name[language]}</span>
+            {t("hero.greeting")}{" "}
+            <span className="text-primary dark:text-primary-light">{site.name[language]}</span>
           </h1>
           <p className="text-2xl md:text-3xl text-gray-600 dark:text-gray-300 mb-6">
             {site.title[language]}

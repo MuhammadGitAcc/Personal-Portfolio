@@ -37,9 +37,9 @@ const Experience = () => {
                 viewport={{ once: true }}
                 className="mb-8"
               >
-                <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 relative border-s-4 border-primary text-center md:text-start">
+                <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 relative border-s-4 border-primary dark:border-primary-light text-center md:text-start">
                   <h3 className="text-xl font-bold mb-1">{item.role[language]}</h3>
-                  <h4 className="text-lg font-semibold text-primary mb-2">
+                  <h4 className="text-lg font-semibold text-primary dark:text-primary-light mb-2">
                     {item.company[language]}
                   </h4>
 
