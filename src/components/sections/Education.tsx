@@ -1,28 +1,15 @@
 import { motion } from "framer-motion";
-import { FaGraduationCap, FaCalendarAlt, FaUniversity } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
+import { FaCalendarAlt, FaGraduationCap, FaUniversity } from "react-icons/fa";
+import { education } from "../../data/education";
+import { useLanguage } from "../../hooks/useLanguage";
 import Container from "../ui/Container";
+import MetaItem from "../ui/MetaItem";
+import SectionHeading from "../ui/SectionHeading";
 
 const Education = () => {
-  const educationData = [
-    {
-      id: 1,
-      degree: "Bachelor's Degree in Software Engineering",
-      institution: "Al-Baath University",
-      location: "Syria",
-      duration: "2017 - 2022",
-      icon: <FaGraduationCap className="text-white text-2xl" />,
-      position: "left",
-    },
-    {
-      id: 2,
-      degree: "Academic Master in Web Science (MWS)",
-      institution: "Syrian Virtual University",
-      location: "Syria",
-      duration: "October 2023 – 2025",
-      icon: <FaGraduationCap className="text-white text-2xl" />,
-      position: "right",
-    },
-  ];
+  const { t } = useTranslation();
+  const language = useLanguage();
 
   return (
     <section id="education" className="py-16 bg-gray-50 dark:bg-gray-900">
@@ -33,41 +20,32 @@ const Education = () => {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <div className="flex flex-col items-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-2 text-center">Education</h2>
-            <div className="w-20 h-1 bg-primary rounded"></div>
-          </div>
+          <SectionHeading title={t("education.title")} />
 
           {/* Timeline container */}
           <div className="relative max-w-3xl mx-auto">
             {/* Vertical line for desktop, left-aligned on mobile */}
             <div className="absolute left-6 md:left-1/2 md:-translate-x-1/2 w-1 bg-gray-200 dark:bg-gray-700 h-full z-0"></div>
 
-            {educationData.map((item) => (
+            {education.map((item, index) => (
               <div
                 key={item.id}
                 className={`relative flex flex-col md:flex-row items-center mb-16 ${
-                  item.position === "left" ? "md:flex-row-reverse" : "md:flex-row"
+                  index % 2 === 0 ? "md:flex-row-reverse" : "md:flex-row"
                 }`}
               >
                 {/* Content box */}
                 <div
                   className={`bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md w-full md:w-5/12 text-center md:text-left ${
-                    item.position === "right" ? "md:ml-auto" : "md:mr-auto"
+                    index % 2 !== 0 ? "md:ml-auto" : "md:mr-auto"
                   }`}
                 >
-                  <h3 className="text-xl font-semibold mb-4">{item.degree}</h3>
-                  <div className="flex flex-col md:flex-row md:items-center mb-2 text-gray-600 dark:text-gray-300 justify-center md:justify-start">
-                    <div className="flex items-center justify-center md:justify-start">
-                      <FaUniversity className="mr-2 flex-shrink-0" />
-                      <span>
-                        {item.institution}, {item.location}
-                      </span>
-                    </div>
-                  </div>
-                  <div className="flex items-center text-gray-600 dark:text-gray-300 justify-center md:justify-start">
-                    <FaCalendarAlt className="mr-2 flex-shrink-0" />
-                    <span>{item.duration}</span>
+                  <h3 className="text-xl font-semibold mb-4">{item.degree[language]}</h3>
+                  <div className="space-y-2 text-gray-600 dark:text-gray-300">
+                    <MetaItem icon={FaUniversity}>
+                      {item.institution[language]}, {item.location[language]}
+                    </MetaItem>
+                    <MetaItem icon={FaCalendarAlt}>{item.duration[language]}</MetaItem>
                   </div>
                 </div>
 
@@ -80,7 +58,7 @@ const Education = () => {
                     transition={{ duration: 0.3 }}
                     viewport={{ once: true }}
                   >
-                    {item.icon}
+                    <FaGraduationCap className="text-white text-2xl" aria-hidden="true" />
                   </motion.div>
                 </div>
               </div>
