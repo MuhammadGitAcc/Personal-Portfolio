@@ -10,6 +10,7 @@ import {
   FaMapMarkerAlt,
 } from "react-icons/fa";
 import emailjs from "emailjs-com";
+import Container from "../ui/Container";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -83,8 +84,8 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-16 bg-gray-50 dark:bg-gray-800">
-      <div className="container mx-auto px-4">
+    <section id="contact" className="py-16 bg-gray-100 dark:bg-gray-800">
+      <Container>
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -268,7 +269,7 @@ const Contact = () => {
             </div>
           </div>
         </motion.div>
-      </div>
+      </Container>
     </section>
   );
 };

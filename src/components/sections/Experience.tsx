@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { FaCalendarAlt, FaMapMarkerAlt } from "react-icons/fa";
+import Container from "../ui/Container";
 
 const Experience = () => {
   const experienceData = [
@@ -85,8 +86,8 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-16 bg-gray-50 dark:bg-gray-800">
-      <div className="container mx-auto px-4">
+    <section id="experience" className="py-16 bg-gray-100 dark:bg-gray-800">
+      <Container>
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -144,7 +145,7 @@ const Experience = () => {
             ))}
           </div>
         </motion.div>
-      </div>
+      </Container>
     </section>
   );
 };

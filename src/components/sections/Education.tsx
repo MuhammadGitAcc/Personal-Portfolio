@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { FaGraduationCap, FaCalendarAlt, FaUniversity } from "react-icons/fa";
+import Container from "../ui/Container";
 
 const Education = () => {
   const educationData = [
@@ -24,8 +25,8 @@ const Education = () => {
   ];
 
   return (
-    <section id="education" className="py-16">
-      <div className="container mx-auto px-4">
+    <section id="education" className="py-16 bg-gray-50 dark:bg-gray-900">
+      <Container>
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -86,7 +87,7 @@ const Education = () => {
             ))}
           </div>
         </motion.div>
-      </div>
+      </Container>
     </section>
   );
 };

@@ -7,14 +7,14 @@ import Contact from "../components/sections/Contact";
 
 const Home = () => {
   return (
-    <div className="container mx-auto px-4">
+    <>
       <Hero />
       <About />
       <Education />
       <Experience />
       <Projects />
       <Contact />
-    </div>
+    </>
   );
 };
 

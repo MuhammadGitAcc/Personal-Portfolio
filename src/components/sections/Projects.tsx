@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaExternalLinkAlt } from "react-icons/fa";
+import Container from "../ui/Container";
 
 // Import all project images
 import TechNews from "../../assets/TechNews.png";
@@ -106,8 +107,8 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-16">
-      <div className="container mx-auto px-4">
+    <section id="projects" className="py-16 bg-gray-50 dark:bg-gray-900">
+      <Container>
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -184,7 +185,7 @@ const Projects = () => {
             ))}
           </div>
         </motion.div>
-      </div>
+      </Container>
     </section>
   );
 };

@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
 import { FaUser } from "react-icons/fa";
+import Container from "../ui/Container";
 
 const About = () => {
   return (
-    <section id="about" className="py-16 bg-gray-50 dark:bg-gray-800">
-      <div className="container mx-auto px-4">
+    <section id="about" className="py-16 bg-white dark:bg-gray-800">
+      <Container>
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -61,7 +62,7 @@ const About = () => {
             </div>
           </div>
         </motion.div>
-      </div>
+      </Container>
     </section>
   );
 };
