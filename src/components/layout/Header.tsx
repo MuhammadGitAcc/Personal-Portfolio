@@ -5,7 +5,7 @@ import Logo from "../../assets/logo.png";
 import { navItems } from "../../data/navigation";
 import { site } from "../../data/site";
 import { useActiveSection } from "../../hooks/useActiveSection";
-import type { Language } from "../../types";
+import { useLanguage } from "../../hooks/useLanguage";
 import Container from "../ui/Container";
 import ThemeToggle from "../ui/ThemeToggle";
 
@@ -17,10 +17,10 @@ type HeaderProps = {
 const sectionIds = ["hero", ...navItems.map((item) => item.sectionId)];
 
 const Header = ({ darkMode, toggleDarkMode }: HeaderProps) => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const activeSection = useActiveSection(sectionIds);
-  const language: Language = i18n.resolvedLanguage === "ar" ? "ar" : "en";
+  const language = useLanguage();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
