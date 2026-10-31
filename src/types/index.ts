@@ -11,9 +11,12 @@ export interface SocialLink {
   display?: string;
 }
 
+export type NavLabelKey =
+  "nav.about" | "nav.education" | "nav.experience" | "nav.projects" | "nav.contact";
+
 export interface NavItem {
   sectionId: string;
-  labelKey: string;
+  labelKey: NavLabelKey;
 }
 
 export interface Degree {
