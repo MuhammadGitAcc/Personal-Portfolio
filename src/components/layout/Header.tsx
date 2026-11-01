@@ -56,6 +56,8 @@ const Header = ({ darkMode, toggleDarkMode }: HeaderProps) => {
               <img
                 src={Logo}
                 alt={t("common.logoAlt", { name: site.name[language] })}
+                width={517}
+                height={523}
                 className="h-14 w-auto"
               />
             </a>
