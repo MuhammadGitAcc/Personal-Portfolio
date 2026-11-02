@@ -51,6 +51,27 @@ const Header = ({ darkMode, toggleDarkMode }: HeaderProps) => {
     <header className="sticky top-0 z-50 bg-white dark:bg-gray-800 shadow-md transition-colors duration-300">
       <Container className="sm:px-12">
         <div className="flex justify-between items-center py-4">
+          <nav aria-label={t("nav.label")} className="hidden md:flex items-center gap-8">
+            {renderLinks()}
+            <LanguageToggle />
+            <ThemeToggle isDark={darkMode} onToggle={toggleDarkMode} />
+          </nav>
+
+          <div className="md:hidden flex items-center gap-4">
+            <button
+              type="button"
+              className="rounded-md p-1 text-gray-600 dark:text-gray-300 focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-primary-light"
+              onClick={toggleMenu}
+              aria-label={isMenuOpen ? t("nav.closeMenu") : t("nav.openMenu")}
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-menu"
+            >
+              {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+            </button>
+            <ThemeToggle isDark={darkMode} onToggle={toggleDarkMode} />
+            <LanguageToggle />
+          </div>
+
           <div className="flex items-center">
             <a href="#hero">
               <img
@@ -61,27 +82,6 @@ const Header = ({ darkMode, toggleDarkMode }: HeaderProps) => {
                 className="h-14 w-auto"
               />
             </a>
-          </div>
-
-          <nav aria-label={t("nav.label")} className="hidden md:flex items-center gap-8">
-            {renderLinks()}
-            <LanguageToggle />
-            <ThemeToggle isDark={darkMode} onToggle={toggleDarkMode} />
-          </nav>
-
-          <div className="md:hidden flex items-center gap-4">
-            <LanguageToggle />
-            <ThemeToggle isDark={darkMode} onToggle={toggleDarkMode} />
-            <button
-              type="button"
-              className="text-gray-600 dark:text-gray-300 focus:outline-none"
-              onClick={toggleMenu}
-              aria-label={isMenuOpen ? t("nav.closeMenu") : t("nav.openMenu")}
-              aria-expanded={isMenuOpen}
-              aria-controls="mobile-menu"
-            >
-              {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
-            </button>
           </div>
         </div>
 
