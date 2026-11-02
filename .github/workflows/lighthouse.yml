@@ -1,0 +1,37 @@
+name: Lighthouse
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: lighthouse-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - run: npm ci
+
+      - run: npm run build
+        env:
+          VITE_EMAILJS_SERVICE_ID: ci-dummy-service-id
+          VITE_EMAILJS_TEMPLATE_ID: ci-dummy-template-id
+          VITE_EMAILJS_PUBLIC_KEY: ci-dummy-public-key
+
+      - uses: treosh/lighthouse-ci-action@v12
+        with:
+          configPath: ./lighthouserc.json
+          uploadArtifacts: true
