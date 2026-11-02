@@ -4,6 +4,9 @@ on:
   push:
   pull_request:
 
+permissions:
+  contents: read
+
 concurrency:
   group: ci-${{ github.ref }}
   cancel-in-progress: true
@@ -11,6 +14,7 @@ concurrency:
 jobs:
   checks:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
 
@@ -23,4 +27,16 @@ jobs:
       - run: npm run typecheck
       - run: npm run lint
       - run: npm run format:check
+      - run: npm test
       - run: npm run build
+        env:
+          VITE_EMAILJS_SERVICE_ID: ci-dummy-service-id
+          VITE_EMAILJS_TEMPLATE_ID: ci-dummy-template-id
+          VITE_EMAILJS_PUBLIC_KEY: ci-dummy-public-key
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist
+          retention-days: 7
+          if-no-files-found: error
