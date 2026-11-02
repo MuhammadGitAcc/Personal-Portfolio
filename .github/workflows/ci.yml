@@ -24,6 +24,14 @@ jobs:
           cache: npm
 
       - run: npm ci
+
+      - name: Audit the packages shipped to visitors (fails on high severity)
+        run: npm audit --omit=dev --audit-level=high
+
+      - name: Audit all packages including dev tools (information only)
+        run: npm audit --audit-level=high
+        continue-on-error: true
+
       - run: npm run typecheck
       - run: npm run lint
       - run: npm run format:check
