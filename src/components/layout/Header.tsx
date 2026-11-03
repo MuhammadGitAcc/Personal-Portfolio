@@ -5,6 +5,7 @@ import Logo from "../../assets/logo.png";
 import { navItems } from "../../data/navigation";
 import { site } from "../../data/site";
 import { useActiveSection } from "../../hooks/useActiveSection";
+import { useHideOnScroll } from "../../hooks/useHideOnScroll";
 import { useLanguage } from "../../hooks/useLanguage";
 import Container from "../ui/Container";
 import LanguageToggle from "../ui/LanguageToggle";
@@ -22,6 +23,8 @@ const Header = ({ darkMode, toggleDarkMode }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const activeSection = useActiveSection(sectionIds);
   const language = useLanguage();
+  const scrolledDown = useHideOnScroll();
+  const isHidden = scrolledDown && !isMenuOpen;
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -48,7 +51,9 @@ const Header = ({ darkMode, toggleDarkMode }: HeaderProps) => {
     });
 
   return (
-    <header className="sticky top-0 z-50 bg-white dark:bg-gray-800 shadow-md transition-colors duration-300">
+    <header
+      className={`sticky top-0 z-50 bg-white dark:bg-gray-800 shadow-md transition-[transform,background-color] duration-300 has-[:focus-visible]:translate-y-0 ${isHidden ? "-translate-y-[120%]" : "translate-y-0"}`}
+    >
       <Container className="sm:px-12">
         <div className="flex justify-between items-center py-4">
           <nav aria-label={t("nav.label")} className="hidden md:flex items-center gap-8">
