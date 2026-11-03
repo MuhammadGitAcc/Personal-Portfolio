@@ -29,10 +29,11 @@ const textFields: TextField[] = [
   { id: "subject", type: "text", autoComplete: "off" },
 ];
 
-const connectLinks: { id: SocialLinkId; variant: "blue" | "green" }[] = [
+const connectLinks: { id: SocialLinkId; variant: "blue" | "green" | "gray" }[] = [
   { id: "facebook", variant: "blue" },
   { id: "whatsapp", variant: "green" },
   { id: "linkedin", variant: "blue" },
+  { id: "github", variant: "gray" },
 ];
 
 const feedbackStyles: Record<Feedback, string> = {
@@ -200,7 +201,7 @@ const Contact = () => {
 
               <div className="mt-8">
                 <h4 className="font-semibold mb-4">{t("contact.connect")}</h4>
-                <div className="flex gap-4">
+                <div className="flex flex-wrap gap-4">
                   {connectLinks.map(({ id, variant }) => {
                     const link = getSocialLink(id);
                     const Icon = socialIcons[id];

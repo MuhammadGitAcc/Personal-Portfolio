@@ -13,9 +13,11 @@ const Hero = () => {
   const { t } = useTranslation();
   const language = useLanguage();
   const linkedin = getSocialLink("linkedin");
+  const github = getSocialLink("github");
   const email = getSocialLink("email");
   const cv = getSocialLink("cv");
   const LinkedinIcon = socialIcons.linkedin;
+  const GithubIcon = socialIcons.github;
   const EmailIcon = socialIcons.email;
   const CvIcon = socialIcons.cv;
 
@@ -50,6 +52,13 @@ const Hero = () => {
               variant="blue"
             >
               <LinkedinIcon size={24} />
+            </IconLink>
+            <IconLink
+              href={resolveHref(github, language)}
+              label={github.label[language]}
+              variant="gray"
+            >
+              <GithubIcon size={24} />
             </IconLink>
             <IconLink
               href={resolveHref(email, language)}
