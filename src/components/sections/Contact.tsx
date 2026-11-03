@@ -175,7 +175,7 @@ const Contact = () => {
                         <a
                           href={resolveHref(link, language)}
                           dir="ltr"
-                          className="inline-block text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors break-words"
+                          className="inline-block max-w-full text-sm sm:text-base text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors [overflow-wrap:anywhere]"
                         >
                           {link.display}
                         </a>
@@ -191,7 +191,7 @@ const Contact = () => {
                       aria-hidden="true"
                     />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <h4 className="font-semibold mb-1">{t("contact.location")}</h4>
                     <p className="text-gray-600 dark:text-gray-300">{t("contact.locationValue")}</p>
                   </div>
@@ -220,7 +220,7 @@ const Contact = () => {
             </div>
 
             {/* Contact Form */}
-            <div className="bg-white dark:bg-gray-700 p-8 rounded-lg shadow-md">
+            <div className="bg-white dark:bg-gray-700 p-6 sm:p-8 rounded-lg shadow-md">
               <h3 className="text-2xl font-bold mb-6">{t("contact.sendTitle")}</h3>
 
               <div role="status" aria-live="polite">
