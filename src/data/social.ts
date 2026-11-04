@@ -10,6 +10,11 @@ export const socialLinks: SocialLink[] = [
     href: "https://www.linkedin.com/in/muhammad-muhammad-217640173",
   },
   {
+    id: "github",
+    label: { en: "GitHub", ar: "جيت هاب" },
+    href: "https://github.com/MuhammadGitAcc",
+  },
+  {
     id: "email",
     label: { en: "Email", ar: "البريد الإلكتروني" },
     href: `mailto:${email}`,

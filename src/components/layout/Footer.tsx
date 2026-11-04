@@ -8,7 +8,14 @@ import Container from "../ui/Container";
 import IconLink from "../ui/IconLink";
 import { socialIcons } from "../ui/socialIcons";
 
-const footerLinkIds: SocialLinkId[] = ["facebook", "whatsapp", "linkedin", "email", "phone"];
+const footerLinkIds: SocialLinkId[] = [
+  "facebook",
+  "whatsapp",
+  "linkedin",
+  "github",
+  "email",
+  "phone",
+];
 
 const Footer = () => {
   const { t } = useTranslation();

@@ -2,7 +2,8 @@ export type Language = "en" | "ar";
 
 export type LocalizedText = Record<Language, string>;
 
-export type SocialLinkId = "linkedin" | "email" | "phone" | "whatsapp" | "facebook" | "cv";
+export type SocialLinkId =
+  "linkedin" | "github" | "email" | "phone" | "whatsapp" | "facebook" | "cv";
 
 export interface SocialLink {
   id: SocialLinkId;
