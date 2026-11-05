@@ -48,11 +48,11 @@
   "projects": {
     "title": "المشاريع",
     "viewProject": "عرض المشروع",
+    "viewSource": "الشيفرة المصدرية",
+    "technologies": "التقنيات",
+    "filter": "تصفية المشاريع",
     "categories": {
       "all": "كل المشاريع",
-      "ecommerce": "التجارة الإلكترونية",
-      "utility": "أدوات",
-      "blog": "مدوّنة",
       "management": "إدارة"
     }
   },
