@@ -1,6 +1,6 @@
 import type { Project } from "../types";
-import kareemImage from "../assets/images/projects/kareem-ims.png";
-import taskManagementImage from "../assets/images/projects/employee-task-management.png";
+import kareemImage from "../assets/images/projects/kareem-ims.webp";
+import taskManagementImage from "../assets/images/projects/employee-task-management.webp";
 
 export const projects: Project[] = [
   {
