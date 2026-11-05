@@ -7,7 +7,7 @@ export const experience: Job[] = [
     id: "kareem-group",
     role: { en: "Founder & Full-Stack Developer", ar: "مؤسّس ومطوّر ويب Full-Stack" },
     company: { en: "KAREEM Group", ar: "KAREEM Group" },
-    location: remote,
+    location: { en: "Syria", ar: "سوريا" },
     duration: { en: "Jan 2026 – Present", ar: "يناير 2026 – حتى الآن" },
     description: {
       en: "Founded KAREEM Group to provide software solutions, and designed, built and deployed its first two products end to end: Kareem, a multi-branch inventory, sales and repairs platform, and an Employee Task Management platform with a Kanban board, live team chat and role-based access. Built secure, tested APIs with JWT authentication, rate limiting and input validation, and deployed both products to the cloud with protected main branches and required automated checks.",
