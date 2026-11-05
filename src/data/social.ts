@@ -39,7 +39,10 @@ export const socialLinks: SocialLink[] = [
   {
     id: "cv",
     label: { en: "CV", ar: "السيرة الذاتية" },
-    href: { en: "/cv/cv-en.pdf", ar: "/cv/cv-ar.pdf" },
+    href: {
+      en: "/cv/Muhammad-Muhammad-CV-EN.pdf",
+      ar: "/cv/Muhammad-Muhammad-CV-AR.pdf",
+    },
   },
 ];
 

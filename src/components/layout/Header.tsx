@@ -1,7 +1,6 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { FaBars, FaTimes } from "react-icons/fa";
-import Logo from "../../assets/logo.png";
 import { navItems } from "../../data/navigation";
 import { site } from "../../data/site";
 import { useActiveSection } from "../../hooks/useActiveSection";
@@ -9,6 +8,7 @@ import { useHideOnScroll } from "../../hooks/useHideOnScroll";
 import { useLanguage } from "../../hooks/useLanguage";
 import Container from "../ui/Container";
 import LanguageToggle from "../ui/LanguageToggle";
+import Logo from "../ui/Logo";
 import ThemeToggle from "../ui/ThemeToggle";
 
 type HeaderProps = {
@@ -25,6 +25,32 @@ const Header = ({ darkMode, toggleDarkMode }: HeaderProps) => {
   const language = useLanguage();
   const scrolledDown = useHideOnScroll();
   const isHidden = scrolledDown && !isMenuOpen;
+  const headerRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    if (!isMenuOpen) {
+      return;
+    }
+
+    const handlePointerDown = (event: PointerEvent) => {
+      if (headerRef.current && !headerRef.current.contains(event.target as Node)) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("pointerdown", handlePointerDown);
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("pointerdown", handlePointerDown);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isMenuOpen]);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -52,6 +78,7 @@ const Header = ({ darkMode, toggleDarkMode }: HeaderProps) => {
 
   return (
     <header
+      ref={headerRef}
       className={`sticky top-0 z-50 bg-white dark:bg-gray-800 shadow-md transition-[transform,background-color] duration-300 has-[:focus-visible]:translate-y-0 ${isHidden ? "-translate-y-[120%]" : "translate-y-0"}`}
     >
       <Container className="sm:px-12">
@@ -79,25 +106,27 @@ const Header = ({ darkMode, toggleDarkMode }: HeaderProps) => {
 
           <div className="flex items-center">
             <a href="#hero">
-              <img
-                src={Logo}
-                alt={t("common.logoAlt", { name: site.name[language] })}
-                width={517}
-                height={523}
-                className="h-14 w-auto"
+              <Logo
+                label={t("common.logoAlt", { name: site.name[language] })}
+                className="h-12 w-12"
               />
             </a>
           </div>
         </div>
+      </Container>
 
-        {isMenuOpen && (
-          <div id="mobile-menu" className="md:hidden py-4 pb-6">
-            <nav aria-label={t("nav.label")} className="flex flex-col space-y-4">
+      {isMenuOpen && (
+        <div
+          id="mobile-menu"
+          className="md:hidden absolute inset-x-0 top-full border-t border-gray-200/60 dark:border-gray-700/60 bg-white/60 dark:bg-gray-800/60 backdrop-blur-md shadow-lg"
+        >
+          <Container className="sm:px-12">
+            <nav aria-label={t("nav.label")} className="flex flex-col py-2 [&>a]:py-3">
               {renderLinks(closeMenu)}
             </nav>
-          </div>
-        )}
-      </Container>
+          </Container>
+        </div>
+      )}
     </header>
   );
 };

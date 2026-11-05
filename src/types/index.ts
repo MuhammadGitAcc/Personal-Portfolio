@@ -55,6 +55,8 @@ export interface SiteInfo {
   name: LocalizedText;
   title: LocalizedText;
   description: LocalizedText;
+  aboutHeadline: LocalizedText;
+  aboutParagraphs: LocalizedText[];
   url: string;
   yearsOfExperience: number;
 }

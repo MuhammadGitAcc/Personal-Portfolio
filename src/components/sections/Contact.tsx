@@ -30,7 +30,6 @@ const textFields: TextField[] = [
 ];
 
 const connectLinks: { id: SocialLinkId; variant: "blue" | "green" | "gray" }[] = [
-  { id: "facebook", variant: "blue" },
   { id: "whatsapp", variant: "green" },
   { id: "linkedin", variant: "blue" },
   { id: "github", variant: "gray" },

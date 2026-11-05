@@ -42,7 +42,8 @@
     "title": "Education"
   },
   "experience": {
-    "title": "Professional Experience"
+    "title": "Professional Experience",
+    "earlier": "Earlier experience"
   },
   "projects": {
     "title": "Projects",

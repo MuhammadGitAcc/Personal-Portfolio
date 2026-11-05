@@ -51,8 +51,12 @@ const About = () => {
             </div>
 
             <div className="order-1 md:order-2 text-center md:text-start">
-              <h3 className="text-2xl font-bold mb-4">{site.title[language]}</h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">{site.description[language]}</p>
+              <h3 className="text-2xl font-bold mb-4">{site.aboutHeadline[language]}</h3>
+              {site.aboutParagraphs.map((paragraph) => (
+                <p key={paragraph.en} className="text-gray-600 dark:text-gray-300 mb-4">
+                  {paragraph[language]}
+                </p>
+              ))}
             </div>
           </div>
         </motion.div>
