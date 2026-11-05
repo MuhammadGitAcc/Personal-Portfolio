@@ -12,7 +12,7 @@ The site is built with Vite and hosted on Cloudflare Pages.
 2. Commit and push the branch, then open a pull request.
 3. GitHub runs the required checks:
    - `checks` (CI): typecheck, lint, format check, tests, audit and build.
-   - `lighthouse`: Accessibility, Best Practices and SEO must stay at 0.9 or above.
+   - `lighthouse`: Performance, Accessibility, Best Practices and SEO must each stay at 0.9 or above.
 4. Cloudflare Pages builds a preview of the branch. The link is posted as a comment on the pull request.
 5. When the required checks are green, merge with **Squash and merge**. `main` is protected, so it cannot be changed any other way.
 6. Cloudflare Pages builds `main` and publishes it to production by itself, usually in about a minute.
@@ -51,6 +51,20 @@ The policy allows the small inline theme script in `index.html` by its SHA-256 h
 
 If you add something from another site (fonts, analytics, remote images, another API), add its address to the matching directive in the policy, or the browser will block it.
 
+## Checking the live site
+
+After an important change, check that the headers and the files are served correctly:
+
+```
+curl -sI https://moh-port.pages.dev/ | grep -iE "content-security|x-frame|x-content-type|referrer|permissions|cross-origin|strict-transport"
+curl -sI https://moh-port.pages.dev/assets/FILE-NAME.js | grep -iE "^HTTP|cache-control"
+for f in robots.txt sitemap.xml manifest.webmanifest favicon.ico og-image.png; do echo "$f: $(curl -s -o /dev/null -w '%{http_code} %{content_type}' https://moh-port.pages.dev/$f)"; done
+```
+
+The first command should list seven headers. The second should show `immutable`; take a real file name from `curl -s https://moh-port.pages.dev/ | grep -oE '/assets/[^"]+\.js'`. Every file in the loop should answer `200` with its real type, never `text/html`.
+
+Only the `public/` folder is published as it is: `robots.txt`, `sitemap.xml`, the icons, the manifest and the social image must live there, not in the project root.
+
 ## Rolling back
 
 Rolling back is safe and quick. Use the first method to restore the site immediately, and the second to fix `main` itself.
@@ -81,17 +95,24 @@ The old version is live again at once. This does not change GitHub: `main` still
 - **Merge conflict on `public/_headers` or another file already merged:** the branch was started from an old branch instead of a fresh `main`. Start again from `main`.
 - **A check named "Workers Builds" fails:** it comes from the old Cloudflare Worker `personal-portfolio`. It is not required. Delete that Worker or disconnect its Git repository in Cloudflare.
 - **Builds:** the free Pages plan allows 500 builds per month, and every pushed branch gets a preview build.
+- **The link preview shows an old or missing image:** chat apps and social sites keep previews for a while. Wait a little, or refresh it with the site's own tool (for example LinkedIn Post Inspector).
 
-## Custom domain
+## Site address
 
-Not set up yet. When a final domain is chosen: Workers & Pages -> `moh-port` -> Custom domains, then update the site URL in `src/data/site.ts`, the canonical link, `sitemap.xml`, `robots.txt` and the Open Graph tags.
+There is no custom domain: the final address is `https://moh-port.pages.dev`. It is written in the places below, which must all change together if the address ever changes (for example with a custom domain under Workers & Pages -> `moh-port` -> Custom domains):
+
+- `src/data/site.ts` (`url`)
+- `index.html`: the canonical link, the hreflang links, `og:url`, the two image links (`og:image` and `twitter:image`) and the structured data (JSON-LD)
+- `public/sitemap.xml`
+- `public/robots.txt` (the `Sitemap:` line)
 
 ## Run the project locally
 
-Node 22 is required (`nvm use`).
+Node 22 is required (`nvm use`). After copying `.env.example` to `.env.local`, fill in the three `VITE_EMAILJS_*` values.
 
 ```
-npm install
+npm ci
+cp .env.example .env.local
 npm run dev
 ```
 
