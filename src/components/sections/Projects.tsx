@@ -1,95 +1,41 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaExternalLinkAlt } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
+import { useLanguage } from "../../hooks/useLanguage";
 import Container from "../ui/Container";
+import SectionHeading from "../ui/SectionHeading";
 
 // Import all project images
-import TechNews from "../../assets/TechNews.png";
-import TaskManagment from "../../assets/TaskManagment.png";
-import ExpenseTrack from "../../assets/ExpenseTrack.png";
-import StolenBikesInvestigation from "../../assets/StolenBikesInvestigation.png";
-import TodoApp from "../../assets/TodoApp.png";
-import LightStore from "../../assets/LightStore.png";
-import ShopCarts from "../../assets/ShopCarts.png";
-import MobileStore from "../../assets/MobileStore.png";
-import SkyWay from "../../assets/SkyWay.png";
-
+import KareemIMS from "../../assets/KareemIMS.png";
+import EmployeeTaskManagement from "../../assets/EmployeeTaskManagement.png";
 const Projects = () => {
+  const { t } = useTranslation();
+  const language = useLanguage();
   const [filter, setFilter] = useState("all");
 
   const projectsData = [
     {
       id: 1,
-      title: "Flights Bookig website",
-      description: "Wonderful and facinating website to book your flight",
-      link: "https://skyway-flights.vercel.app/",
-      category: "utility",
-      image: SkyWay,
+      title: "Kareem | Inventory System",
+      description: {
+        en: "A full-stack, multi-branch platform for managing inventory, sales and repairs in retail shops. It covers serial and batch tracking, point-of-sale checkout, purchase orders, branch transfers, treasury, staff roles, offline support and three languages: English, Arabic and German.",
+        ar: "منصة متكاملة متعددة الفروع لإدارة المخزون والمبيعات والصيانة في المتاجر. تشمل تتبّع الأرقام التسلسلية والدفعات، ونقطة البيع، وأوامر الشراء، والتحويل بين الفروع، والخزينة، وصلاحيات الموظفين، ودعم العمل دون اتصال، وتدعم العربية والإنجليزية والألمانية.",
+      },
+      link: "https://kareem-ims.pages.dev",
+      category: "management",
+      image: KareemIMS,
     },
     {
       id: 2,
-      title: "Mobile Online Store",
-      description: "Modern and fasional webstore for Smart Mobile Phones",
-      link: "https://mobilewebstore.vercel.app/",
-      category: "ecommerce",
-      image: MobileStore,
-    },
-    {
-      id: 3,
-      title: "Technical-News Modern Blog",
-      description: "A dynamic blog delivering technical news and insights.",
-      link: "https://tech-news-modernblog.vercel.app/",
-      category: "blog",
-      image: TechNews,
-    },
-    {
-      id: 4,
-      title: "Employee-Task-Management-Platform",
-      description: "A platform for managing employee tasks and collaboration.",
-      link: "https://emplyee-task-managment-platform.vercel.app/",
+      title: "Employee Task Management",
+      description: {
+        en: "A full-stack platform for managing team work: tasks with a drag-and-drop Kanban board, comments and activity history, dashboard charts, notifications and live team chat, with role-based access for admins, managers and employees.",
+        ar: "منصة متكاملة لإدارة عمل الفريق: مهام مع لوحة كانبان بالسحب والإفلات، وتعليقات وسجل نشاط، ولوحة معلومات برسوم بيانية، وإشعارات، ومحادثة مباشرة للفريق، مع صلاحيات حسب الدور للمسؤول والمدير والموظف.",
+      },
+      link: "https://employee-task-management-system.pages.dev/",
       category: "management",
-      image: TaskManagment,
-    },
-    {
-      id: 5,
-      title: "ExpenseTrack",
-      description: "An intuitive app for tracking personal finances.",
-      link: "https://expensetrakenew.netlify.app",
-      category: "utility",
-      image: ExpenseTrack,
-    },
-    {
-      id: 6,
-      title: "Stolen Bikes Investigation | SBI",
-      description: "A platform to report and track stolen bikes.",
-      link: "https://stolen-bikes-investigasion-sbi.vercel.app/",
-      category: "utility",
-      image: StolenBikesInvestigation,
-    },
-    {
-      id: 7,
-      title: "Clothes Store | Men & Women",
-      description: "An e-commerce platform for clothing.",
-      link: "https://mystoreshopcart.vercel.app/",
-      category: "ecommerce",
-      image: ShopCarts,
-    },
-
-    {
-      id: 9,
-      title: "Todo Application",
-      description: "A simple and intuitive todo app.",
-      link: "https://to-do-apptasks.vercel.app/",
-      category: "utility",
-      image: TodoApp,
-    },
-    {
-      id: 10,
-      title: "Modern Shopping | Light Store",
-      description: "An e-commerce store for lighting products.",
-      link: "https://light-store-modern.vercel.app/",
-      category: "ecommerce",
-      image: LightStore,
+      image: EmployeeTaskManagement,
     },
   ];
 
@@ -97,13 +43,8 @@ const Projects = () => {
     filter === "all" ? projectsData : projectsData.filter((project) => project.category === filter);
 
   const categories = [
-    { id: "all", name: "All Projects" },
-    { id: "ecommerce", name: "E-commerce" },
-    { id: "utility", name: "Utility" },
-    // { id: "design", name: "UI/UX Design" },
-    // { id: "agency", name: "Agency" },
-    { id: "blog", name: "Blog" },
-    { id: "management", name: "Management" },
+    { id: "all", name: t("projects.categories.all") },
+    { id: "management", name: t("projects.categories.management") },
   ];
 
   return (
@@ -115,10 +56,7 @@ const Projects = () => {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <div className="flex flex-col items-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-2">Projects</h2>
-            <div className="w-20 h-1 bg-primary rounded"></div>
-          </div>
+          <SectionHeading title={t("projects.title")} />
 
           {/* Filter Buttons */}
           <div className="flex flex-wrap justify-center gap-2 mb-8">
@@ -170,7 +108,9 @@ const Projects = () => {
                   </div>
                   <div className="p-6">
                     <h3 className="text-xl font-bold mb-2 truncate">{project.title}</h3>
-                    <p className="text-gray-600 dark:text-gray-300 mb-4">{project.description}</p>
+                    <p className="text-gray-600 dark:text-gray-300 mb-4">
+                      {project.description[language]}
+                    </p>
                     <a
                       href={project.link}
                       target="_blank"

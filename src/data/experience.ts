@@ -4,6 +4,27 @@ const remote: LocalizedText = { en: "Remote", ar: "عن بُعد" };
 
 export const experience: Job[] = [
   {
+    id: "kareem-group",
+    role: { en: "Founder & Full-Stack Developer", ar: "مؤسّس ومطوّر ويب Full-Stack" },
+    company: { en: "KAREEM Group", ar: "KAREEM Group" },
+    location: remote,
+    duration: { en: "Jan 2026 – Present", ar: "يناير 2026 – حتى الآن" },
+    description: {
+      en: "Founded KAREEM Group to provide software solutions, and designed, built and deployed its first two products end to end: Kareem, a multi-branch inventory, sales and repairs platform, and an Employee Task Management platform with a Kanban board, live team chat and role-based access. Built secure, tested APIs with JWT authentication, rate limiting and input validation, and deployed both products to the cloud with protected main branches and required automated checks.",
+      ar: "أسّستُ KAREEM Group لتقديم حلول برمجية، وصمّمتُ أول منتجين لها وبنيتُهما ونشرتُهما من البداية إلى النهاية: «كريم» منصة متعددة الفروع لإدارة المخزون والمبيعات والصيانة، ومنصة لإدارة مهام الموظفين تضم لوحة كانبان ومحادثة مباشرة للفريق وصلاحيات حسب الدور. بنيتُ واجهات برمجية (APIs) آمنة ومختبَرة تشمل مصادقة JWT وتحديد معدل الطلبات والتحقق من المدخلات، ونشرتُ المنتجين على السحابة مع حماية الفرع الرئيسي وفحوصات آلية إلزامية.",
+    },
+    skills: [
+      "React.js",
+      "TypeScript",
+      "Node.js",
+      "Express.js",
+      "PostgreSQL",
+      "Prisma",
+      "Tailwind CSS",
+      "WebSocket",
+    ],
+  },
+  {
     id: "codex",
     role: { en: "Full-Stack Web Developer", ar: "مطوّر ويب Full-Stack" },
     company: { en: "Codex", ar: "Codex" },

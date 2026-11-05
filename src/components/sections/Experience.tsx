@@ -4,9 +4,13 @@ import { FaCalendarAlt, FaMapMarkerAlt } from "react-icons/fa";
 import { experience } from "../../data/experience";
 import { useLanguage } from "../../hooks/useLanguage";
 import Container from "../ui/Container";
+import EarlierJob from "../ui/EarlierJob";
 import MetaItem from "../ui/MetaItem";
 import SectionHeading from "../ui/SectionHeading";
 import Tag from "../ui/Tag";
+
+const recentJobs = experience.slice(0, 2);
+const earlierJobs = experience.slice(2);
 
 const Experience = () => {
   const { t } = useTranslation();
@@ -28,7 +32,7 @@ const Experience = () => {
           <SectionHeading title={t("experience.title")} id="experience-heading" />
 
           <div className="max-w-4xl mx-auto">
-            {experience.map((item) => (
+            {recentJobs.map((item) => (
               <motion.div
                 key={item.id}
                 initial={{ opacity: 0, y: 20 }}
@@ -60,6 +64,19 @@ const Experience = () => {
                 </div>
               </motion.div>
             ))}
+
+            {earlierJobs.length > 0 && (
+              <div className="mt-4">
+                <h3 className="mb-4 text-lg font-semibold text-center md:text-start">
+                  {t("experience.earlier")}
+                </h3>
+                <div className="space-y-3">
+                  {earlierJobs.map((item) => (
+                    <EarlierJob key={item.id} job={item} language={language} />
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </motion.div>
       </Container>

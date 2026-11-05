@@ -15,7 +15,8 @@ const variantClasses: Record<IconLinkVariant, string> = {
   red: "bg-red-600 hover:bg-red-700 text-white p-3 rounded-full",
   green: "bg-green-600 hover:bg-green-700 text-white p-3 rounded-full",
   gray: "bg-gray-600 hover:bg-gray-700 text-white p-3 rounded-full",
-  plain: "text-gray-300 hover:text-white",
+  plain:
+    "border border-gray-300 dark:border-gray-600 p-3 rounded-full text-gray-600 dark:text-gray-300 hover:border-primary hover:text-primary dark:hover:border-primary-light dark:hover:text-primary-light",
 };
 
 const IconLink = ({ href, label, children, variant = "plain" }: IconLinkProps) => {

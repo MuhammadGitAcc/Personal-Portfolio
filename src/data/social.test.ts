@@ -26,4 +26,15 @@ describe("social links", () => {
       ar: expect.stringMatching(/\.pdf$/),
     });
   });
+
+  it("point to CV files that exist in public/cv", () => {
+    const cv = socialLinks.find((link) => link.id === "cv");
+    const href = cv?.href;
+    const hrefs = typeof href === "object" ? Object.values(href) : [];
+    const files = Object.keys(import.meta.glob("../../public/cv/*.pdf"));
+
+    expect(hrefs.length).toBeGreaterThan(0);
+    const missing = hrefs.filter((path) => !files.includes(`../../public${path}`));
+    expect(missing).toEqual([]);
+  });
 });
