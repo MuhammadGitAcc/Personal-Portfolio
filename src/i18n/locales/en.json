@@ -48,11 +48,11 @@
   "projects": {
     "title": "Projects",
     "viewProject": "View Project",
+    "viewSource": "Source code",
+    "technologies": "Technologies",
+    "filter": "Filter projects",
     "categories": {
       "all": "All Projects",
-      "ecommerce": "E-commerce",
-      "utility": "Utility",
-      "blog": "Blog",
       "management": "Management"
     }
   },

@@ -38,6 +38,8 @@ export interface Job {
   skills: string[];
 }
 
+export type ProjectCategory = "management";
+
 export interface Project {
   slug: string;
   title: LocalizedText;
@@ -45,7 +47,7 @@ export interface Project {
   imageAlt: LocalizedText;
   image: string;
   tags: string[];
-  category: string;
+  category: ProjectCategory;
   liveUrl: string;
   repoUrl?: string;
   featured?: boolean;
