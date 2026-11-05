@@ -3,9 +3,9 @@ import headers from "../public/_headers?raw";
 import indexHtml from "../index.html?raw";
 
 function inlineScripts(html: string): string[] {
-  return [...html.matchAll(/<script(?![^>]*\ssrc=)[^>]*>([\s\S]*?)<\/script>/g)].map(
-    (match) => match[1] ?? "",
-  );
+  return [...html.matchAll(/<script(?![^>]*\ssrc=)([^>]*)>([\s\S]*?)<\/script>/g)]
+    .filter((match) => !(match[1] ?? "").includes("ld+json"))
+    .map((match) => match[2] ?? "");
 }
 
 async function sha256Base64(text: string): Promise<string> {
